@@ -5,8 +5,9 @@ str(data)
 df <- subset(data, data$Date=="1/2/2007"|data$Date=="2/2/2007")
 
 ##plot1
-#transform factor into numeric
-z<-as.numeric(levels(df$Global_active_power))[df$Global_active_power]
-#plot date~global active power
-plot(time,z, type="l", xlab="", 
-     ylab="Global Active Power (kilowatts)")
+#transform factor into numeric variable
+gap<-df$Global_active_power
+xx<-as.numeric(levels(gap))[gap]
+#get the histogram of plot1
+hist(xx,col="red",xlab="Global Active Power(kilowatts)",main="Global Active Power",breaks=12)
+
